@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -15,40 +13,36 @@ knitr::opts_chunk$set(
 
 # nice99setup
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of nice99setup is to ...
-
-## Installation
-
-You can install the development version of nice99setup like so:
+The goal of nice99setup is to provide a template for an R package project to start off. You will need to finish the rest.
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+remotes::install_github('Throwback8491/nice99setup')
 ```
 
-## Example
+# Further setup instructions
 
-This is a basic example which shows you how to solve a common problem:
+1.  use_X_license
 
-```{r example}
-library(nice99setup)
-## basic example code
-```
+2.  use_author
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+3.  edit \_sinewconfig.yml author
 
-```{r cars}
-summary(cars)
-```
+4.  find and replace all instances of "nice99setup" and replace them with the title of the package you actually want to make
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+5.  run the commented out renv::install command in R/addin_libs.R then delete it
 
-You can also embed plots, for example:
+6.  exit Rstudio
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+7.  rename the Rproj file to the same thing as step 4
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+8.  delete the git repo
+
+9.  reopen rstudio
+
+10. use_git()
+
+11. add this to the .Rprofile after making .Rprofile git assume unchanged my_sinew_force \<- list(dplyr = c('filter'))
+
+12. add the following snippet (but better formatted). my_sinew_force will be a living list that keeps growing as I discover annoying sinew namespacing defaults
+
+    snippet nss usethis::use_r("${1}") sinew::pretty_namespace("R/${1}.R", force = my_sinew_force, overwrite = TRUE) file.remove("R/\${1}.R")
