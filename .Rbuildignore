@@ -1,0 +1,9 @@
+^renv$
+^renv\.lock$
+^nice99setup\.Rproj$
+^\.Rproj\.user$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^README\.Rmd$
+^.*\.yml$
