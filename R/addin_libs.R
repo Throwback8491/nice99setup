@@ -1,3 +1,1 @@
-# library(datapasta)
-# library(sinew)
-# library(styler)
+# renv::install(c("datapasta", "sinew", "styler"))
