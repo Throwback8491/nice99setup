@@ -39,10 +39,14 @@ remotes::install_github('Throwback8491/nice99setup')
 
 9.  reopen rstudio
 
-10. use_git()
+10. temporarily move "R/ZZZ_utils.R" to somewhere outside the git repo
 
-11. add this to the .Rprofile after making .Rprofile git assume unchanged my_sinew_force \<- list(dplyr = c('filter'))
+11. use_git()
 
-12. add the following snippet (but better formatted). my_sinew_force will be a living list that keeps growing as I discover annoying sinew namespacing defaults
+12. add ZZZ_utils.R back in, and add it to the exclude gitignore file in the new repo
 
-    snippet nss usethis::use_r("${1}") sinew::pretty_namespace("R/${1}.R", force = my_sinew_force, overwrite = TRUE) file.remove("R/\${1}.R")
+This next one is only once per computer
+
+add the following snippet (but better formatted). my_sinew_force will be a living list that keeps growing as I discover annoying sinew namespacing defaults
+
+snippet nss	usethis::use_r("\${1}")	sinew::pretty_namespace("R/\${1}.R", force = my_sinew_force, overwrite = TRUE)	file.remove("R/\${1}.R")
