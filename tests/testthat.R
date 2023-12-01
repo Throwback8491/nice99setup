@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(nice99setup)
+# library(nice99setup)
 
 test_check("nice99setup")
